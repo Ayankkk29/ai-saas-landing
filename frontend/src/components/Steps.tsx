@@ -122,7 +122,7 @@ const Steps = () => {
               </p>
 
               {/* Step-specific content */}
-              {step.number === 1 && (
+              {step.number === 1 && step.formExample && (
                 <div className="bg-gray-50 rounded-lg p-4 mb-6">
                   <div className="text-sm text-gray-600 mb-3">{step.details}</div>
                   <div className="space-y-2">
