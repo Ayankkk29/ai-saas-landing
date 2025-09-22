@@ -163,34 +163,21 @@ const Steps = () => {
                 <div className="bg-gray-50 rounded-lg p-6 mb-6">
                   <div className="text-sm text-gray-600 mb-4 text-center">{step.details}</div>
                   <div className="flex justify-center mb-4">
-                    <div className="relative w-24 h-24">
-                      <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
-                        {step.chartData?.segments.map((segment, i) => {
-                          const percentage = parseInt(segment.label);
-                          const circumference = 2 * Math.PI * 40;
-                          const strokeDasharray = `${(percentage / 100) * circumference} ${circumference}`;
-                          const strokeDashoffset = i === 0 ? 0 : -((i * 25) / 100) * circumference;
-                          
-                          return (
-                            <circle
-                              key={i}
-                              cx="50"
-                              cy="50"
-                              r="40"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="8"
-                              strokeDasharray={strokeDasharray}
-                              strokeDashoffset={strokeDashoffset}
-                              className={segment.color.replace('bg-', 'text-')}
-                            />
-                          );
-                        })}
-                      </svg>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-lg font-bold text-gray-900">{step.chartData?.value}</span>
-                      </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-green-600 mb-2">{step.chartData?.value}</div>
+                      <div className="text-sm text-gray-500">Monthly Savings</div>
                     </div>
+                  </div>
+                  <div className="space-y-2">
+                    {step.chartData?.segments.map((segment, i) => (
+                      <div key={i} className="flex items-center justify-between text-sm">
+                        <div className="flex items-center">
+                          <div className={`w-3 h-3 rounded-full ${segment.color} mr-2`}></div>
+                          <span className="text-gray-600">Productivity Gain</span>
+                        </div>
+                        <span className="font-semibold text-gray-900">{segment.label}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}

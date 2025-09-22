@@ -14,7 +14,7 @@ frontend_task/
 │   │   └── styles/    # Global Styles
 │   ├── package.json
 │   ├── tailwind.config.js
-│   └── vercel.json    # Vercel Deployment Config
+│   └── Netlify.json    Deployment Config
 │
 └── backend/           # Node.js Backend with Microservices
     ├── middleware/    # JWT Auth & Rate Limiting
