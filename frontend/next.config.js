@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // experimental options removed due to Next.js version incompatibility
+  output: 'export',
+  trailingSlash: true,
   images: {
+    unoptimized: true,
     domains: ['images.unsplash.com'],
   },
 }
